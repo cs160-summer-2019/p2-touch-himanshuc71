@@ -85,6 +85,48 @@
 	</div>
 	<script>
 	  // your solution here
+		$(document).ready(() => {
+		let rotateElement = document.getElementById('rotate-box');
+		let pinchElement = document.getElementById('pinch-box');
+		let pressElement = document.getElementById('press-box');
+		let panElement = document.getElementById('pan-box');
+		let tapElement = document.getElementById('tap-box');
+		let swipeElement = document.getElementById('swipe-box');
+		
+		let re = new Hammer(rotateElement);
+		re.get('rotate').set({ enable: true });
+		re.on('rotate', () => {
+			rotateElement.textContent = "Rotate gesture works!";
+		});
+			
+		let pe = new Hammer(pinchElement);	
+		pe.get('pinch').set({ enable: true });
+		pe.on('pinch', () => {
+			pinchElement.textContent = "Pinch gesture works!";
+		});	
+			
+		let pressE = new Hammer(pressElement);
+		pressE.on('press', () => {
+			pressElement.textContent = "Press gesture works!";
+		});	
+			
+		let panE = new Hammer(panElement);	
+		panE.on('pan', () => {
+			panElement.textContent = "Pan gesture works!";
+		});	
+			
+		let tapE = new Hammer(tapElement);	
+		tapE.on('tap', () => {
+			tapElement.textContent = "Tap gesture works!";
+		});	
+			
+		let swipeE = new Hammer(swipeElement);	
+		swipeE.on('swipe', () => {
+			swipeElement.textContent = "Swipe gesture works!";
+		});		
+				
+		});
+		
   </script>
 </body>
 </html>
